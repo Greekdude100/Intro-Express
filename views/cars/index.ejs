@@ -9,8 +9,15 @@
 <body>
     <h1> All cars</h1>
     <ul>
-       <% cars.forEach(function() { %>
-
+        <!-- Just like in JavaScript you have to name your element as you loop through. It's always best practice to name them the singular version of the plural name. Since we have `cars` it should be `car` -->
+       <% cars.forEach(function(car) { %>
+        <!-- We need a `li` since we are in a `ul` -->
+        <li>
+            <!-- Accessing the `cars` key for every `car` we have as we move through the array -->
+            <%= car.cars %>
+            <!-- Ternary to display if a `car` is expensive -->
+            <%= car.expensive ? 'yes' : 'no' %>
+        </li>
       <% }); %>
     </ul>
 </body>

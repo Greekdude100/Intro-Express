@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 
 //require the cars "database"
+// Move this database out of the views folder only view templates should be stored in the views folder
 const carsDb = require('./views/data/cars-db')
 
 // Create our express app
@@ -27,7 +28,7 @@ app.get('/home', function (req, res) {
 
   app.get('/cars', function(req, res) {
     const cars = carsDb.getAll();
-    res.render('cars/index', { cars});
+    res.render('cars/index', { cars });
   });
 // Tell the app to listen on port 3000
 // for HTTP requests from clients
